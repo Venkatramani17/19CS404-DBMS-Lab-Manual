@@ -108,8 +108,8 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-![Uploading Dark Mode Reservation ER Diagram.png…]()
 
+<img width="1536" height="1024" alt="Dark Mode Reservation ER Diagram" src="https://github.com/user-attachments/assets/9a249d3a-46ed-4c42-87ec-34284dd055eb" />
 
 ###  Entities and Attributes
 | Entity    | Attributes (PK, FK) | Notes |
