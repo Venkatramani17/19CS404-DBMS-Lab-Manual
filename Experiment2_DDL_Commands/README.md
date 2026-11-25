@@ -1,4 +1,4 @@
-<img width="447" height="110" alt="Screenshot 2026-11-25 153017" src="https://github.com/user-attachments/assets/4b51d04a-53e4-4ee1-b109-e16533cad43d" /># Experiment 2: DDL Commands
+# Experiment 2: DDL Commands
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
