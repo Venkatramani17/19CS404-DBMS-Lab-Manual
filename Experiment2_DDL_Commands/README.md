@@ -1,4 +1,4 @@
-# Experiment 2: DDL Commands
+<img width="447" height="110" alt="Screenshot 2026-11-25 153017" src="https://github.com/user-attachments/assets/4b51d04a-53e4-4ee1-b109-e16533cad43d" /># Experiment 2: DDL Commands
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
@@ -105,123 +105,224 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer 
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
--- Paste your SQL code below for Question 1
+ALTER TABLE customer ADD birth_date timestamp;
 ```
 
 **Output:**
+<img width="687" height="166" alt="Screenshot 2026-11-25 152333" src="https://github.com/user-attachments/assets/926195d8-5267-46c6-b7aa-1d2b5c87dbaa" />
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+Create a table named Invoices with the following constraints:
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+Amount as REAL should be greater than 0.
+DueDate as DATE should be greater than the InvoiceDate.
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Invoices (
+InvoiceID INTEGER PRIMARY KEY,
+InvoiceDate DATE,
+Amount REAL CHECK (Amount> 0),
+DueDate DATE CHECK (DueDate > InvoiceDate),
+OrderID INTEGER,
+FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
+
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="422" height="101" alt="Screenshot 2026-11-25 152529" src="https://github.com/user-attachments/assets/5b12eda3-60d0-4639-8fbd-bde9ae75569f" />
+
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named Invoices with the following constraints:
+
+InvoiceID as INTEGER should be the primary key.
+InvoiceDate as DATE.
+DueDate as DATE should be greater than the InvoiceDate.
+Amount as REAL should be greater than 0.
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE Invoices (
+    InvoiceID INTEGER PRIMARY KEY,
+    InvoiceDate DATE,
+    DueDate DATE CHECK (DueDate > InvoiceDate),
+    Amount REAL CHECK (Amount > 0)
+);
 ```
 
 **Output:**
+<img width="376" height="102" alt="Screenshot 2026-11-25 152700" src="https://github.com/user-attachments/assets/acf00fee-1fd9-4a29-9553-2f51c95cbfa6" />
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
 
 ```sql
--- Paste your SQL code below for Question 4
+INSERT INTO Student_details (RollNo,Name,Gender,Subject,MARKS) VALUES(201,'David Lee','M','Physics','92');
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="430" height="70" alt="Screenshot 2026-11-25 152753" src="https://github.com/user-attachments/assets/1760d27c-dc22-4e2f-aaa7-40b93a54c3fc" />
+
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Department with the following constraints:
+DepartmentID as INTEGER should be the primary key.
+DepartmentName as TEXT should be unique and not NULL.
+Location as TEXT.
+
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Department (
+    DepartmentID INTEGER PRIMARY KEY,
+    DepartmentName TEXT UNIQUE NOT NULL,
+    Location TEXT
+);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="431" height="106" alt="Screenshot 2026-11-25 152855" src="https://github.com/user-attachments/assets/9e216a9f-80c5-417b-9f48-9a24e685950c" />
+
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+In the Student_details table, insert a student record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
+
+RollNo      Name            Gender      Subject      MARKS
+----------  ------------    ----------  ----------   ----------
+205         Olivia Green    F
+207         Liam Smith      M           Mathematics  85
+208         Sophia Johnson  F           Science
+
 
 ```sql
--- Paste your SQL code below for Question 6
+INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (205, 'Olivia Green', 'F', NULL, NULL);
+
+INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (207, 'Liam Smith', 'M', 'Mathematics', 85);
+
+INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (208, 'Sophia Johnson', 'F', 'Science', NULL);
 ```
 
 **Output:**
 
-![Output6](output.png)
+
+<img width="447" height="110" alt="Screenshot 2026-11-25 153017" src="https://github.com/user-attachments/assets/6bf4eed6-33cf-4638-8e25-95d9184befb0" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL Query  to add attribute ISBN as varchar(30) and domain_dept as varchar(30) in the table 'books'
 
 ```sql
--- Paste your SQL code below for Question 7
+ALTER TABLE books ADD ISBN varchar(30);
+ALTER TABLE books ADD domain_dept varchar(30);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="510" height="190" alt="Screenshot 2026-11-25 153131" src="https://github.com/user-attachments/assets/80b3c6dd-2c09-4558-9f53-4d9ec82d8b8c" />
+
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named ProjectAssignments with the following constraints:
+AssignmentID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+ProjectID as INTEGER should be a foreign key referencing Projects(ProjectID).
+AssignmentDate as DATE should be NOT NULL.
 
 ```sql
--- Paste your SQL code below for Question 8
+CREATE TABLE ProjectAssignments (
+    AssignmentID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER,
+    ProjectID INTEGER,
+    AssignmentDate DATE NOT NULL,
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID),
+    FOREIGN KEY (ProjectID) REFERENCES Projects(ProjectID)
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="385" height="107" alt="Screenshot 2026-11-25 153426" src="https://github.com/user-attachments/assets/387e52fe-75a4-40a2-9aab-21a91fe268ab" />
+
+
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a table named Employees with the following columns:
+
+EmployeeID as INTEGER
+FirstName as TEXT
+LastName as TEXT
+HireDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 9
+
+CREATE TABLE Employees (
+    EmployeeID INTEGER,
+    FirstName TEXT,
+    LastName TEXT,
+    HireDate DATE
+);
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="451" height="122" alt="Screenshot 2026-11-25 153619" src="https://github.com/user-attachments/assets/ac5e9e8d-7fca-4c2c-9027-a7c0732161bd" />
+
+
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Insert all books from Out_of_print_books into Books
+
+Table attributes are ISBN, Title, Author, Publisher, YearPublished
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Books
+SELECT * FROM Out_of_print_books;
 ```
 
 **Output:**
 
-![Output10](output.png)
+
+<img width="593" height="106" alt="Screenshot 2026-11-25 153702" src="https://github.com/user-attachments/assets/436b9bad-d608-4632-8cb7-ef7e32dcaa02" />
+
 
 
 ## RESULT
