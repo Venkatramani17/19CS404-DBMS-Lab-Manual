@@ -37,125 +37,62 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
 
-```sql
--- Paste your SQL code below for Question 1
+How many prescriptions were written by each doctor?
+
+Sample tablePrescriptions Table
 ```
-
+SELECT DoctorID, COUNT(*)AS
+TotalPrescriptions
+FROM Prescriptions
+GROUP BY DoctorID;
+```
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/c5ecb054-0dcb-4489-baa4-2b30c8238a73)
 
 **Question 2**
----
--- Paste Question 2 here
 
-```sql
--- Paste your SQL code below for Question 2
+How many patients are covered by each insurance company?
+
+Sample table:Insurance Table
+
+name type
+
+InsuranceID INTEGER PatientID INTEGER InsuranceCompany TEXT PolicyNumber TEXT PolicyHolder TEXT ValidityPeriod TEXT
+
 ```
-
+SELECT InsuranceCompany,
+COUNT ( DISTINCT PatientID )AS
+TotalPatients
+FROM Insurance
+GROUP BY InsuranceCompany;
+```
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/02784127-99c3-429f-ad06-d69b605a5c7b)
 
 **Question 3**
----
--- Paste Question 3 here
 
-```sql
--- Paste your SQL code below for Question 3
+How many patients are there in each city?
+
 ```
-
+SELECT Address, COUNT(*)AS
+TotalPatients
+FROM Patients
+GROUP BY Address;
+```
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/38f989b2-c1f9-4278-8f02-1497e0eebb7a)
+
 
 **Question 4**
----
--- Paste Question 4 here
 
-```sql
--- Paste your SQL code below for Question 4
-```
+Write a SQL query to find the minimum purchase amount.
 
-**Output:**
-
-![Output4](output.png)
-
-**Question 5**
----
--- Paste Question 5 here
-
-```sql
--- Paste your SQL code below for Question 5
-```
-
-**Output:**
-
-![Output5](output.png)
-
-**Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
-```
-
-**Output:**
-
-![Output6](output.png)
-
-**Question 7**
----
--- Paste Question 7 here
-
-```sql
--- Paste your SQL code below for Question 7
-```
-
-**Output:**
-
-![Output7](output.png)
-
-**Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
-```
-
-**Output:**
-
-![Output8](output.png)
-
-**Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
-
-**Output:**
-
-![Output9](output.png)
-
-**Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
-
-**Output:**
-
-![Output10](output.png)
-
+Sample table: orders
+![image](https://github.com/user-attachments/assets/b45b235a-cc86-420d-84ac-4c4a3aefb6d5)
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
